@@ -1,0 +1,49 @@
+/* Variables and mixins declared here will be available in all other SCSS files */
+
+// --- VARIABLES --- //
+    $text-color: #FFFFFF;
+
+// Button
+    $button-color: #2F4AD3;
+
+// Colors
+    $accent-color: #6980F5;
+    $bg-color: #232325;
+    $soft-color: #BDBDBD;
+    $line-color: #283472;
+
+// Animation
+    
+// --- MIXINS --- //
+
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin animation-line($selector){
+        #{$selector}{
+            position: relative;
+        &::after{
+            content: "";
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: 0.2s ease-in;
+        }
+        &:hover::after{
+            width: 100%;
+        }
+    }
+}
+

@@ -1,0 +1,81 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+@import '$vendors/initial';
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: Grtsk;
+    font-size: 0.875em;
+    color: $text-color;
+    background-color: $bg-color;
+    height: 100%;
+}
+
+.wrapper{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.animation__line{
+    position: relative;
+}
+
+.animation__line::after{
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: 0.2s ease-in;
+}
+
+.animation__line:hover::after {
+    width: 100%;
+}
+
+@media (min-width: 2000px){
+    body{
+        font-size: 1.35em;
+    }
+
+    .logo img{
+        min-width: 145%;
+    }
+
+    .header__contacts{
+        margin-left: 11%;
+    }
+
+    .social__link svg{
+        width: 1.35em;
+        height: 1.35em;
+    }
+}
+
+@media (min-width: 3000px){
+    body{
+        font-size: 1.75em;
+    }
+
+    .logo img{
+        min-width: 145%;
+    }
+
+    .production {
+        max-width: 27.73%;
+    }
+
+    .partner__icon--dom {
+        padding-top: 1.6em;
+    }
+
+    .social__link svg{
+        width: 1.75em;
+        height: 1.75em;
+    }
+}
